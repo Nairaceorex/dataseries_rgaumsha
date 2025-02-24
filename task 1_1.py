@@ -1,11 +1,23 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-path1 = '/home/nairaceorex/PycharmProjects/dataseries_rgaumsha/AofED_Datasets_Excel/EXRUK.xls'
+directory = '/home/nairaceorex/PycharmProjects/dataseries_rgaumsha/AofED_Datasets_Excel'
+path1 = f'{directory}/EXRUK.xls'
+path2 = f'{directory}/INCOME.xls'
 
 df1 = pd.read_excel(path1, header=None)
+df2 = pd.read_excel(path2, header=0)
+
 Y = df1.iloc[:, 1]
 X = df1.iloc[:, 0]
 
-plt.plot(X, Y)
+Y1=df2.iloc[:,1]
+Y2=df2.iloc[:,2]
+X1 = df2.iloc[:, 0]
+
+fig, ax = plt.subplots()
+ax.plot(X1, Y1)
+ax.plot(X1, Y2)
+
+#plt.plot(X, Y)
 plt.show()
