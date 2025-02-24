@@ -20,4 +20,11 @@ ax.plot(X1, Y1)
 ax.plot(X1, Y2)
 
 #plt.plot(X, Y)
+#plt.show()
+
+income_growthRates = []
+for i in range(1,len(Y2)):
+    growthRate = 100 * (Y2[i]-Y[i-1])
+    income_growthRates.append(growthRate)
+plt.plot(X1[1:], income_growthRates)
 plt.show()
